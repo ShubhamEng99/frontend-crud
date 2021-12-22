@@ -1,0 +1,35 @@
+<div class="row">
+<div class="col-lg-6"><form #contactForm="ngForm">
+  <div class="mb-3">
+      <label for="exampleInputName" class="form-label">Name</label>
+      <input type="text" name="name" class="form-control" id="exampleInputName" aria-describedby="emailHelp" [(ngModel)]="name">
+    </div>
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Email</label>
+    <input type="text" name='email' class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" [(ngModel)]="email">
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Position</label>
+    <input type="text" name='position' class="form-control" id="exampleInputPassword1"  [(ngModel)]="position">
+  </div>
+  <div class="mb-3">
+      <label for="exampleInputsalary" class="form-label">salary</label>
+      <input type="number" name='salary' class="form-control" id="exampleInputsalary" [(ngModel)]="salary">
+  </div>
+  <button *ngIf='!update' type="submit" class="btn btn-primary" (click)="add()">Submit</button>
+  <button *ngIf='update' type="submit" class="btn btn-primary" (click)="updateemp()">UPDATE</button>
+</form></div>
+<div class="col-lg-6">
+  <ul>
+    <li *ngFor="let i of list">
+        {{i.name}} <button class="btn btn-danger" (click)="del(i._id)">del</button> <button class="btn btn-success" (click)="getemp(i._id)">edit</button>
+    
+    </li>
+</ul>
+</div>
+
+
+
+
+ 
+</div>
